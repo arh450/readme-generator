@@ -1,22 +1,70 @@
-// Step one npm init - DONE
-
-// The user will be prompted for their GitHub username and other information pertaining to the project the README is for.
+const inquirer = require("inquirer");
+const fs = require("fs");
+const fs = require("./generateMarkdown");
 
 // README Requirements
 // At least one badge
 const questions = [
 
-    // What is your project title? "string"
-    // What is your project description? "string"
-    // What is the sequencing of your Table of Contents? -> Generate markdown not a question
-    // What are the installation steps for your project? "string"
-    // What is the usage for your project? "string"
-    // What is your project license? [Array]: "string"
-    // Who are the contributors for your project? "string"
-    // What are your tests? -> prompt user to enter three screenshot images and then format markdown
-    // What are your questions? to be featured as a Contact section for README (see below)
-    // What is your github username? "string"
-    // what is your github email address? "string"
+    // PROJECT TITLE
+    {
+        type: "input",
+        message: "Enter your project title",
+        name: "title"
+    },
+    // PROJECT DESCRIPTION
+    {
+        type: "input",
+        message: "Enter a description for your project",
+        name: "description"
+    },
+    // PROJECT INSTALLATION
+    {
+        type: "input",
+        message: "Enter the installation steps to your project",
+        name: "installation"
+    },
+    // PROJECT USAGE
+    {
+        type: "input",
+        message: "Enter how your project will be used",
+        name: "usage"
+    },
+    // PROJECT LICENSE
+    {
+        type: "list",
+        message: "Select a license for your project",
+        name: "license",
+        choices: [
+            "Apache License 2.0",
+            "MIT License",
+            "GNU General Public License v3.0"
+        ]
+    },
+    // PROJECT CONTRIBUTORS
+    {
+        type: "input",
+        message: "Enter the contributors to your project",
+        name: "contributors"
+    },
+    // PROJECT TESTS
+    {
+        type: "input",
+        message: "Enter how the project has been tested",
+        name: "tests"
+    },
+    // GITHUB USERNAME
+    {
+        type: "input",
+        message: "What is your Github username?",
+        name: "username"
+    },
+    // GITHUB EMAIL
+    {
+        type: "input",
+        message: "What is your Github account email?",
+        name: "email"
+    }
 
 
 ];
