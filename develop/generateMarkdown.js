@@ -20,17 +20,18 @@ ${data.installation}
 ${data.usage}
 
 ## License
-${data.license}
+![badge](https://img.shields.io/badge/License-${data.license}-blue.svg)
+
 
 ## Tests
 ${data.test}
 
 ## Contributors
-${data.contributor}
+* **${data.contributor}**
 
 ## Contact
-* Github Username: ${data.username}
-* Email: ${data.email}
+* *Github* - [${data.username}](https://github.com/${data.username})
+* *Email* - ${data.email}
 
 
 `;

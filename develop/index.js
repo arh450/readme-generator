@@ -36,9 +36,9 @@ const questions = [
         message: "Select a license for your project:",
         name: "license",
         choices: [
-            "Apache License 2.0",
-            "MIT License",
-            "GNU General Public License v3.0"
+            "Apache",
+            "MIT",
+            "GNU"
         ]
     },
     // PROJECT TESTS
