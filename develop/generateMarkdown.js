@@ -9,6 +9,7 @@ ${data.description}
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
+* [Tests](#tests)
 * [Contributors](#contributors)
 * [Contact](#contact)
 
@@ -21,12 +22,15 @@ ${data.usage}
 ## License
 ${data.license}
 
+## Tests
+${data.test}
+
 ## Contributors
-${data.contibutors}
+${data.contributor}
 
 ## Contact
-${data.username}
-${data.email}
+* Github Username: ${data.username}
+* Email: ${data.email}
 
 
 `;

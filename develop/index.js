@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const fs = require("./generateMarkdown");
+const generateMarkdown = require("./generateMarkdown");
 
 // README Requirements
 // At least one badge
@@ -9,31 +9,31 @@ const questions = [
     // PROJECT TITLE
     {
         type: "input",
-        message: "Enter your project title",
+        message: "Enter your project title:",
         name: "title"
     },
     // PROJECT DESCRIPTION
     {
         type: "input",
-        message: "Enter a description for your project",
+        message: "Enter a description for your project:",
         name: "description"
     },
     // PROJECT INSTALLATION
     {
         type: "input",
-        message: "Enter the installation steps to your project",
+        message: "Enter the installation steps to your project:",
         name: "installation"
     },
     // PROJECT USAGE
     {
         type: "input",
-        message: "Enter how your project will be used",
+        message: "Enter how your project will be used:",
         name: "usage"
     },
     // PROJECT LICENSE
     {
         type: "list",
-        message: "Select a license for your project",
+        message: "Select a license for your project:",
         name: "license",
         choices: [
             "Apache License 2.0",
@@ -41,41 +41,40 @@ const questions = [
             "GNU General Public License v3.0"
         ]
     },
-    // PROJECT CONTRIBUTORS
-    {
-        type: "input",
-        message: "Enter the contributors to your project",
-        name: "contributors"
-    },
     // PROJECT TESTS
     {
         type: "input",
-        message: "Enter how the project has been tested",
-        name: "tests"
+        message: "Enter how the project has been tested:",
+        name: "test"
+    },
+    // PROJECT CONTRIBUTORS
+    {
+        type: "input",
+        message: "Enter the contributors to your project:",
+        name: "contributor"
     },
     // GITHUB USERNAME
     {
         type: "input",
-        message: "What is your Github username?",
+        message: "What is your Github username?:",
         name: "username"
     },
     // GITHUB EMAIL
     {
         type: "input",
-        message: "What is your Github account email?",
+        message: "What is your Github account email?:",
         name: "email"
     }
 
-
 ];
 
-function writeToFile(fileName, data) {
-    // Create a .md file with fileName
-    // Write data to fileName
-}
 
 function init() {
-
-}
-
+    inquirer.prompt(questions).then((input) => {
+        fs.writeFile("generatedreadme.md", generateMarkdown(input), error => {
+            if (error) throw error;
+            console.log("README Generated");
+        });
+    });
+};
 init();
