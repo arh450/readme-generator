@@ -71,9 +71,9 @@ const questions = [
 
 function init() {
     inquirer.prompt(questions).then((input) => {
-        fs.writeFile("generatedreadme.md", generateMarkdown(input), error => {
+        fs.writeFile("GOODREADME.md", generateMarkdown(input), (error) => {
             if (error) throw error;
-            console.log("README Generated");
+            console.log("GOODREADME Generated");
         });
     });
 };
