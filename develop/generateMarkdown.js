@@ -30,8 +30,9 @@ ${data.test}
 * **${data.contributor}**
 
 ## Contact
-* *Github* - [${data.username}](https://github.com/${data.username})
-* *Email* - ${data.email}
+* *For any questions or suggestions please use the following to contact*
+  * *Github* - [${data.username}](https://github.com/${data.username})
+  * *Email* - ${data.email}
 
 
 `;
